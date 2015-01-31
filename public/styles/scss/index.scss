@@ -1,9 +1,14 @@
 @import "mixins";
 
+$pinkShade1: #f857a6;
+$pinkShade2: #ff5858;
+
 body {
-	background-color: red;
+	// background-color: $red;
 	margin: 0;
+	@include linear-gradient(90deg, $pinkShade1 10%, $pinkShade2 90%);
 }
+
 
 @font-face {
     font-family: Cheri;
@@ -32,21 +37,45 @@ main {
 		@include mediaMinWidth(800) {
 			width: 800px;
 		}
-		@include mediaMaxWidth(699) {
+		@include mediaMaxWidth(799) {
 			width: 100%;
 		}
 			
-		& > div {
-			@include marginY(10px);
+		& {
+			> div, > textarea {
+				@include marginY(10px);
+			}
 		}
+		
+		#candygramMessage {
+			& > input {
+				height: 50px;
+			}
+		}
+		
+		textarea {
+
+			max-width: 184px;
+			width: 184px;
+			height: 135px;
+		}
+		
+		input {
+			max-width: 184px;
+			width: 184px;				
+		}
+		
+		
 		
 		input[type=submit], 
 		input[type=email], 
 		input[type=text],
 		input[type=tel] {
-
 			font-family: Cheri;
 		}
+		
+		
 	
 	}
 }
+
