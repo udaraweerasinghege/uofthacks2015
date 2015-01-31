@@ -3,11 +3,13 @@
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"></link>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+                <script src="controllers/controller.js"></script>
 	</head>
 	<body>		
 		<header><h1>Candyman</h1></header>
 		<main>
-			<form>
+                    <div class="container" ng-controller ="AppCtrl">
+			<form id="formA" action="userlogin" method="post">
 				<div>
 					<div>Type your name: </div>
 					<input type="text"></input>
@@ -24,8 +26,10 @@
 					<div>Type message (up to 200 characters inclusive): </div>
 					<input type="text" maxlength=200></input>
 				</div>
+                    
 				<input type="submit" value="Submit">
-			</form>
+                        </form>
+                    </div>
 		</main>
 	</body>
 </html>
