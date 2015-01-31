@@ -1,0 +1,120 @@
+@import "cssShortcuts";
+
+$desktop : "screen and (min-width : 501px)";
+$mobile : "screen and (max-width : 500px)";
+
+$desktop2: "media screen and (min-width: 501px)";
+$mobile2: "media screen and (max-width : 500px)";
+
+@mixin cssCenter($position, $traditional: false) {
+	@if ($position != "") {
+		position: $position;
+	}
+	top : 50%;
+	@if (not $traditional) {
+		left : 50%;
+		@include transform(translate(-50%, -50%));
+	} @else {
+		@include cssCenterX($position, true);
+		@include translateY(-50%);
+	}
+}
+
+@mixin cssCenterText($position) {
+	position : $position;
+	text-align : center;
+	top : 50%;
+	@include transform(translateY(-50%));
+}
+
+@mixin cssCenterX($position: "", $traditional: false, $display: "") {
+
+	@if (not $traditional) {
+		left : 50%;
+		@include transform(translateX(-50%));
+		@if ($position != "") {
+			position: $position;
+		}
+		@if ($display != "") {
+			display : $display;
+		}
+		
+	} @else {
+		margin: 0 auto;
+		display: block;
+		position: relative;
+	}
+}
+
+@mixin cssCenterY($position : "") {
+	top : 50%;
+	@include transform(translateY(-50%));
+	@if ($position != "") {
+		position: $position;
+	}
+}
+
+@mixin desktopInvisible() {
+	@media #{$desktop} {
+		display : none;
+	}
+}
+
+@mixin fade($attribute, $val1, $val2, $seconds: 0.2s, $pseudoClass : "hover") {
+
+	@if ($attribute == "filter") {
+		@include transitionFilter($seconds);
+		@include filter($val1);
+		&:#{$pseudoClass} {
+			@include filter($val2);
+		}
+	}
+	
+	@else {
+		@include transition(#{$attribute} $seconds);
+		#{$attribute} : $val1;
+		&:hover {
+			#{$attribute} : $val2;
+		}
+	}
+}
+
+@mixin fadeBold() {
+	font-weight:300;
+	@include transition(font-weight ease 0.1s);
+	&:hover {
+		font-weight:700;
+		
+	}
+}
+
+@mixin fadeBackground($c2, $c1, $seconds: 0.2s) {
+	@include transition(background-color $seconds);
+	background-color : $c1;
+	&:hover {
+		background-color : $c2;
+	}
+}
+
+@mixin fadeIn($seconds) {
+	@include animation(fadeIn #{$seconds});
+	@include animation-fill-mode(forwards);
+	visibility: hidden ; 
+	opacity : 0;
+}
+
+@mixin fitContainer() {
+	width: 100%;
+	height: 100%;
+}
+
+@mixin mobileInvisible() {
+	@media #{$mobile} {
+		display : none;
+	}
+}
+
+@include keyframes(fadeIn) {
+	0% { visibility: hidden ; opacity : 0 }
+	100% { visibility : visible; opacity : 1  }
+}

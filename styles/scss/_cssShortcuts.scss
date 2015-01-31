@@ -1,0 +1,208 @@
+@mixin animation($value) {
+	 -webkit-animation: #{$value}; /* Safari and Chrome */
+       -moz-animation: #{$value}; /* Firefox */
+        -ms-animation: #{$value}; /* Internet Explorer */
+         -o-animation: #{$value}; /* Opera */
+            animation: #{$value};
+}
+
+@mixin animation-delay($value) {
+	 -webkit-animation-delay: #{$value}; /* Safari and Chrome */
+       -moz-animation-delay: #{$value}; /* Firefox */
+        -ms-animation-delay: #{$value}; /* Internet Explorer */
+         -o-animation-delay: #{$value}; /* Opera */
+            animation-delay: #{$value};
+}
+
+@mixin animation-fill-mode($value) {
+	 -webkit-animation-fill-mode: #{$value}; /* Safari and Chrome */
+       -moz-animation-fill-mode: #{$value}; /* Firefox */
+        -ms-animation-fill-mode: #{$value}; /* Internet Explorer */
+         -o-animation-fill-mode: #{$value}; /* Opera */
+            animation-fill-mode: #{$value};
+}
+
+@mixin bullets($bulletType, $marginLeft) {
+	display : list-item;
+	list-style-type : $bulletType;
+	margin-left : $marginLeft;
+}
+
+@mixin calc($attribute, $value) {
+	#{$attribute}: -webkit-calc(#{$value});
+	#{$attribute}: -ms-calc (#{$value});
+	#{$attribute}: -moz-calc (#{$value});
+	#{$attribute}: -o-calc(#{$value});
+	#{$attribute}: calc(#{$value});
+}
+
+@mixin cursorHand() {
+	cursor: pointer;
+	cursor: hand;
+}
+
+@mixin drag($s) {
+	-webkit-user-drag : $s;
+	-moz-user-drag : $s;
+	-o-user-drag : $s;
+	-ms-user-drag : $s;
+	user-drag : $s;
+}
+
+@function startsWith($string, $substr) {
+
+	$substrLen : str-length($substr);
+	@return str-slice($string, 1, $substrLen) == $substr;
+
+}
+
+@mixin filter($s) {
+	-webkit-filter : #{$s};
+	-moz-filter : #{$s};
+	-o-filter : #{$s};
+	-ms-filter : #{$s};
+	filter : #{$s};
+}
+
+@mixin hideInputSpinner() {
+
+	// Chrome
+	&::-webkit-outer-spin-button, 
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0; 
+		padding: 0;
+		padding: 0;
+	}
+	
+	// Firefox
+	& {
+		-moz-appearance:textfield;
+	}
+	
+}
+
+// keyframes mixin
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+   @-o-keyframes #{$name} {
+    @content;
+  } 
+}
+
+@mixin marginX($p) {
+	margin-left: $p;
+	margin-right: $p;
+}
+
+@mixin marginY($p) {
+	margin-top: $p;
+	margin-bottom: $p;
+}
+
+@mixin mediaMaxWidth($width) {
+	@media screen and (max-width : $width + "px") {
+		@content;
+	}
+}
+
+@mixin mediaMinWidth($width) {
+	@media screen and (min-width : $width + "px") {
+		@content;
+	}
+}
+
+@mixin noSelectText() {
+	@include user-select(none);
+}
+
+@mixin noWebkitPadding() {
+	-webkit-margin-before: 0em;
+	-webkit-margin-after: 0em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+	-webkit-padding-start: 0px;
+}
+
+@mixin paddingX($p) {
+	padding-left: $p;
+	padding-right: $p;
+}
+
+@mixin paddingY($p) {
+	padding-top: $p;
+	padding-bottom: $p;
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder { /* WebKit browsers */
+		@content;
+	}
+	:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+		@content;
+	}
+	::-moz-placeholder { /* Mozilla Firefox 19+ */
+		@content;
+	}
+	:-ms-input-placeholder { /* Internet Explorer 10+ */
+		@content;
+	}
+}
+
+@mixin square($p) {
+	width: $p;
+	height: $p;
+}
+
+@mixin textSelectionColour($s) {
+	::selection {
+		background: $s;
+	}
+	::-moz-selection {
+		background: $s;
+	}
+}
+
+@mixin transform($s) {
+	-webkit-transform : $s;
+	transform : $s;
+	-ms-transform : $s;
+	-moz-transform : $s;
+	-o-transform : $s;
+}
+
+@mixin transition($s) {
+	-webkit-transition : #{$s};
+	-ms-transition : #{$s};
+	-moz-transition : #{$s};
+	-o-transition : #{$s};
+	transition : #{$s};
+}
+
+@mixin transitionFilter($s) {
+	transition: filter + " " + $s + " " + ease-in-out;
+	-webkit-transition: -webkit-filter   + " " + $s + " " +  ease-in-out;
+	-o-transition: -o-filter  + " " + $s + " " +   ease-in-out;
+	-ms-transition: -ms-filter + " " + $s + " " + ease-in-out;
+	-moz-transition: -moz-filter   + " " + $s + " " +   ease-in-out;
+}
+
+@mixin user-select($p) {
+	-webkit-user-select: $p; /* Chrome/Safari */        
+	-moz-user-select: $p; /* Firefox */
+	-ms-user-select: $p; /* IE10+ */
+	-o-user-select: $p;
+	user-select: $p;
+}
+

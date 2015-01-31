@@ -1,5 +1,8 @@
+@import "mixins";
+
 body {
 	background-color: red;
+	margin: 0;
 }
 
 @font-face {
@@ -7,6 +10,24 @@ body {
     src: url(../fonts/CHERI___.ttf);
 }
 
+@font-face {
+    font-family: CheriOutline;
+    src: url(../fonts/CHERL___.ttf);
+}
+
 header {
-	font-family : Cheri;
+	font-family : CheriOutline;
+	text-align: center;
+	background-color: pink;
+	display: inline-block;
+	width: 100%;
+}
+
+main {
+	margin: 10px;
+	
+	form {
+		font-family: CheriOutline;
+	}
+	
 }
