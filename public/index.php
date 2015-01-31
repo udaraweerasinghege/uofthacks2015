@@ -5,7 +5,7 @@
 			session_start();
 		}
 		
-		// include_once("C:/inetpub/wwwroot/UofTHacks/public/php/sendSMS.php");
+		include_once("C:/inetpub/wwwroot/UofTHacks/public/php/sendSMS.php");
 	?>
 
 
@@ -23,7 +23,7 @@
 				<form>
 					<div>
 						<div>Type your name: </div>
-						<input type="text" ng-model="contact.sender" ></input>
+						<input  type="text" ng-model="contact.sender" ></input>
 					</div>
 					<div>
 						<div>Type your lovely's name: </div>
@@ -37,11 +37,11 @@
 						<div>Type your University of Toronto email: </div>
 						<input type="email" ng-model="contact.email"></input>
 					</div>
-					<div>
+					<div id="candygramMessage">
 						<div>Type message (up to 200 characters inclusive): </div>
-						<input type="text" maxlength=200 ng-model="contact.message"></input>
+						<textarea required type="text" maxlength=200 ng-model="contact.message"></textarea>
 					</div>
-					<input type="submit" value="Submit" ng-click= "addContact()"></input>
+					<input type="submit" value="Submit" ng-click="addContact()"></input>
 				</form>
 			</div>
 		</main>
