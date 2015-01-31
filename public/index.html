@@ -9,25 +9,25 @@
 		<header><h1>Candyman</h1></header>
 		<main>
                     <div class="container" ng-controller ="AppCtrl">
-			<form id="formA" action="userlogin" method="post">
+			<form>
 				<div>
 					<div>Type your name: </div>
-					<input type="text"></input>
+					<input type="text" ng-model="contact.sender" ></input>
 				</div>
 				<div>
 					<div>Type your lovely's name: </div>
-					<input type="text"></input>
+					<input type="text" ng-model="contact.receiver"></input>
 				</div>
 				<div>
 					<div>Type your University of Toronto email: </div>
-					<input type="email"></input>
+					<input type="email" ng-model="contact.email"></input>
 				</div>
 				<div>
 					<div>Type message (up to 200 characters inclusive): </div>
-					<input type="text" maxlength=200></input>
+                                        <input type="text" maxlength=200 ng-model="contact.message"></input>
 				</div>
                     
-				<input type="submit" value="Submit">
+                            <input type="submit" value="Submit" ng-click= "addContact()"></input>
                         </form>
                     </div>
 		</main>
