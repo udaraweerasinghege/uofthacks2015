@@ -19,17 +19,25 @@ app.get('/public/contactlist', function(req, res){
 app.post('/public/contactlist', function(req, res) {
     console.log(req.body);
     count = Object.size(req.body);
+    console.log("count:" + count);
+    if (count === 5) {
+        var cursor = db.contactlist.find({email: req.body.email});
+        cursor.toArray(function(err, docs){
+            console.log("retrieved records:");
+            console.log(docs);
+            if (docs.length() === 0) {
+                db.contactlist.insert(req.body, function(err, doc){
+                res.json(doc);
     
-    if (count == 4) {
-        console.log(db.contactlist.find({email: {"$in": req.body.email}}).count());
-        db.contactlist.insert(req.body, function(err, doc){
-            res.json(doc);
-    
+                });
+            }
         });
+        
     }
     
     else {
         console.log("Invalid parameters, db not updated");
+        res.send("0")    
     }
 });
 Object.size = function(obj) {
