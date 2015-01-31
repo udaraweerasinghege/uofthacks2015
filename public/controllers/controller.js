@@ -7,7 +7,7 @@ $http.get('/public/contactlist').success(function(response) {
 });*/
 
 	$scope.sendMessage = function() {
-		$http.post("/public/php/sendSMS.php", {"phoneNumber" : $scope.contact.receiverPhoneNumber, 
+		$http.post("/public/twilio", {"phoneNumber" : $scope.contact.receiverPhoneNumber, 
 		"message": $scope.contact.message}).success(function(data, status, headers, config) {
 			$scope.data = data;
 		}).error(function(data, status, headers, config) {

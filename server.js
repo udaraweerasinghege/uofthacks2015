@@ -4,17 +4,18 @@ var mongojs = require('mongojs');
 var db = mongojs('contactlist', ['contactlist']);
 var bodyParser = require('body-parser');
 
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 
-
+/*
 app.get('/public/contactlist', function(req, res){
     console.log("got get req");
     db.contactlist.find(function(err, docs){
        console.log(docs);
        res.json(docs);
     });
-});
+});*/
 
 app.post('/public/contactlist', function(req, res) {
     
@@ -31,6 +32,7 @@ app.post('/public/contactlist', function(req, res) {
                     db.contactlist.insert(req.body, function(err, doc){
                     res.json(doc);
                     });
+                    sendmsg(req.receiverPhoneNumber, req.body.sender);
                 }
                 else {
                     console.log("Bad email domain");
@@ -60,5 +62,27 @@ function check_domain(email) {
     console.log(domain);
     return domain === "mail.utoronto.ca";
 }
+// Twilio Credentials 
+var accountSid = 'AC101630b8459ce2526b575abd7457c725'; 
+var authToken = '600166b367db1a88faff6cc23a6cbc1d'; 
+ 
+//require the Twilio module and create a REST client 
+var client = require('twilio')(accountSid, authToken); 
+
+function sendmsg(num, name){
+    client.messages.create({ 
+	to: '6479380885', 
+	from: "+16476910522", 
+	body: "Hey you got a message from" + name   
+}, function(err, message) { 
+	console.log(message.sid); 
+});
+}
+
+
+
+
 app.listen(3000);
 console.log("Server running on port 3000");
+
+

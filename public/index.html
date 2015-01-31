@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html ng-app>
-	<?php
-		phpinfo();
-		$x = 4;
-		echo $x;
-		if (session_status() == PHP_SESSION_NONE) {
-			session_start();
-		}
-		echo "SSSS";
-	?>
+
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"/>
 		<!-- JQuery scripts, and scripts that use JQuery. -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="controllers/phoneNumberValidation.js" />
 		
 		<!-- Angular scripts, and scripts that use Angular. -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
