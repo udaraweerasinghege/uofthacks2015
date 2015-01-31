@@ -15,9 +15,9 @@
 	
 	try {	
 		$client->account->messages->create(array( 
-			"To" => "16479380885", 
+			"To" => $_SESSION["phoneNumber"], 
 			"From" => "+16476910522", 
-			"Body" => "Hi IIIIII",   
+			"Body" => $_SESSION["message"],   
 		));
 	}
 	catch (Services_Twilio_RestException $e) {
