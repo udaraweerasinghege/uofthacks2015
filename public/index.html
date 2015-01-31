@@ -7,6 +7,11 @@
 	?>
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"/>
+		<!-- JQuery scripts, and scripts that use JQuery. -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script src="controllers/phoneNumberValidation.js" />
+		
+		<!-- Angular scripts, and scripts that use Angular. -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
 		<script src="controllers/controller.js"></script>
 	</head>
@@ -16,18 +21,18 @@
 		</header>
 		<main>
 			<div class="container" ng-controller="AppCtrl">
-				<form>
+				<form id="candygramForm">
 					<div>
 						<div>Type your name: </div>
-						<input  required type="text" ng-model="contact.sender"></input>
+						<input required type="text" ng-model="contact.sender"></input>
 					</div>
 					<div>
 						<div>Type your lovely's name: </div>
-						<input  required type="text" ng-model="contact.receiver"></input>
+						<input required type="text" ng-model="contact.receiver"></input>
 					</div>
 					<div>
 						<div>Type your lovely's phone number: </div>
-						<input  required type="tel" ng-model="contact.receiverPhoneNumber"></input>
+						<input pattern="[0-9]{10}" maxlength=10 required title="Phone number must have 10 characters!" type="tel" ng-model="contact.receiverPhoneNumber"></input>
 					</div>
 					<div>
 						<div>Type your University of Toronto email: </div>
@@ -40,7 +45,7 @@
 					<!--<input type="submit" value="Submit" ng-click="sendMessage();addContact()"></input>-->
 					<input type="submit" value="Submit" ng-click="addContact()"></input>
 					
-					<!-- <input type="submit" value="Submit" ng-click="sendMessage();"></input> -->
+<!-- 					<input type="submit" value="Submit" ng-click="sendMessage();"></input> -->
 				</form>
 			</div>
 		</main>
