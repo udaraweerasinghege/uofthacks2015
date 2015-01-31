@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html ng-app>
 	<?php
-		phpinfo();
-		$x = 4;
-		echo $x;
+		echo "hiasfasdf";
 		if (session_status() == PHP_SESSION_NONE) {
 			session_start();
 		}
