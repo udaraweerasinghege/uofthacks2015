@@ -19,26 +19,28 @@
 				<form>
 					<div>
 						<div>Type your name: </div>
-						<input type="text" ng-model="contact.sender"></input>
+						<input  required type="text" ng-model="contact.sender"></input>
 					</div>
 					<div>
 						<div>Type your lovely's name: </div>
-						<input type="text" ng-model="contact.receiver"></input>
+						<input  required type="text" ng-model="contact.receiver"></input>
 					</div>
 					<div>
 						<div>Type your lovely's phone number: </div>
-						<input type="tel" ng-model="contact.receiverPhoneNumber"></input>
+						<input  required type="tel" ng-model="contact.receiverPhoneNumber"></input>
 					</div>
 					<div>
 						<div>Type your University of Toronto email: </div>
-						<input type="email" ng-model="contact.email"></input>
+						<input  required type="email" ng-model="contact.email"></input>
 					</div>
 					<div id="candygramMessage">
 						<div>Type message (up to 200 characters inclusive): </div>
 						<textarea required type="text" maxlength=200 ng-model="contact.message"></textarea>
 					</div>
 					<!--<input type="submit" value="Submit" ng-click="sendMessage();addContact()"></input>-->
-					<input type="submit" value="Submit" ng-click="sendMessage();"></input>
+					<input type="submit" value="Submit" ng-click="addContact()"></input>
+					
+					<!-- <input type="submit" value="Submit" ng-click="sendMessage();"></input> -->
 				</form>
 			</div>
 		</main>

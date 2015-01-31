@@ -13,11 +13,18 @@
 	$client = new Services_Twilio($account_sid, $auth_token, "2010-04-01", $http); 
 	$client->http->debug = true;
 	
+	// try {	
+		// $client->account->messages->create(array( 
+			// "To" => $_SESSION["phoneNumber"], 
+			// "From" => "+16476910522", 
+			// "Body" => $_SESSION["message"],   
+		// ));
+	// }	
 	try {	
 		$client->account->messages->create(array( 
-			"To" => $_SESSION["phoneNumber"], 
+			"To" => "+16479380885", 
 			"From" => "+16476910522", 
-			"Body" => $_SESSION["message"],   
+			"Body" => "I'm sick of this black widow baby",   
 		));
 	}
 	catch (Services_Twilio_RestException $e) {

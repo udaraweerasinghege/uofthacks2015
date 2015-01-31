@@ -12,6 +12,10 @@ $http.get('/public/contactlist').success(function(response) {
 			$scope.data = data;
 		}).error(function(data, status, headers, config) {
 			$scope.status = status;
+			Console.log(data);
+			Console.log(status);
+			Console.log(headers);
+			Console.log(config);
 		});
 	}
 	
