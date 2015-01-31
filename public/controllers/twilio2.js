@@ -8,7 +8,7 @@ var client = require('twilio')(accountSid, authToken);
 client.messages.create({  
 	from: "+16476910522", 
 	to: "+16479380885",
-	body: "Pavi. Looking good. You been working out?",   
+	body: "She sits alone, waiting for suggestions, he's acting shy, avoiding all her questions?",   
 }, function(err, message) { 
 	console.log(message.sid); 
 });
