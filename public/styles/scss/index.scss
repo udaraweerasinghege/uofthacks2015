@@ -25,9 +25,18 @@ header {
 
 main {
 	margin: 10px;
+	form {	
+		margin-top: 10px;
+		font-family: Cheri;
+		@include cssCenterX("absolute", true);
+		@include mediaMinWidth(800) {
+			width: 800px;
+		}
+		@include mediaMaxWidth(699) {
+			width: 100%;
+		}
+		
 	
-	form {
-		font-family: CheriOutline;
+	
 	}
-	
 }
