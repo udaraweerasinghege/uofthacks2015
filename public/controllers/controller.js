@@ -21,7 +21,6 @@ $http.get('/public/contactlist').success(function(response) {
 	
 	$scope.addContact = function() {
 		console.log($scope.contact);
-         
 		$http.post('/public/contactlist', $scope.contact).success(function(response){
 	   
 			if (response === "0") {
@@ -34,6 +33,7 @@ $http.get('/public/contactlist').success(function(response) {
 			
 			else {
 				console.log(response);
+				alert("Success! Candygram will be delivered soon!");
 				jQuery(document).ready(function() {
 					jQuery("input[type=text], textarea, input[type=tel], input[type=email]").val("");
 				});
@@ -41,4 +41,5 @@ $http.get('/public/contactlist').success(function(response) {
 			
 		});
 	};
+
 }

@@ -3,6 +3,7 @@ var app = express();
 var mongojs = require('mongojs');
 var db = mongojs('contactlist', ['contactlist']);
 var bodyParser = require('body-parser');
+var unirest = require('unirest');
 
 
 app.use(express.static(__dirname + "/public"));
@@ -28,11 +29,34 @@ app.post('/public/contactlist', function(req, res) {
             console.log("retrieved records:");
             console.log(docs);
             if (docs.length === 0) { //emails not already in db
+                
                 if (check_domain(req.body.email)) {
-                    db.contactlist.insert(req.body, function(err, doc){
-                    res.json(doc);
+                    unirest.get("https://ajith-Verify-email-address-v1.p.mashape.com/varifyEmail?email="+ req.body.email)
+                    .header("X-Mashape-Key", "fNUFY5piDUmsh1T322jQvt1PpQxvp1vxDzojsnHjcBBOqk4hJ3")
+                    .header("Accept", "application/json")
+                    .end(function (result) {
+                        console.log(result.status, result.headers, result.body);
+                        if(result.body.exist === 'true'){
+                            db.contactlist.insert(req.body, function(err, doc){
+                                res.json(doc);
+                                
                     });
+                    
                     sendmsg(req.body.receiverPhoneNumber, req.body.sender);
+    }
+    else{
+        console.log("Shitty email");
+        res.send("1");
+    }
+}); 
+                 
+                  
+                   
+
+                     
+ 
+                    
+                    
                 }
                 else {
                     console.log("Bad email domain");
@@ -79,6 +103,15 @@ function sendmsg(num, name){
 		console.log("+1" + num); 
 	});
 }
+/**
+function validate(email){
+    var x = -1;
+
+console.log("step 1 passed");
+return x==='true';
+}**/
+
+    
 
 app.listen(3000);
 console.log("Server running on port 3000");
