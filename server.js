@@ -45,7 +45,7 @@ app.post('/public/contactlist', function(req, res) {
                     sendmsg(req.body.receiverPhoneNumber, req.body.sender);
     }
     else{
-        console.log("Shitty email");
+        console.log("Shitty email address, not uoft or timeout");
         res.send("1");
     }
 }); 
@@ -98,7 +98,7 @@ function sendmsg(num, name){
     client.messages.create({ 
 		to: "+1" + num, 
 		from: "+16476910522", 
-		body: "Hey you got a candygram from " + name   
+		body: "Hey you got a candygram from " + name + ". If you accept it, reply with when and where our elves can find you on Campus to deliver your candy and Valentine's note(e.g:Sydney Smith February 4th 2pm). If you do not want it, reply 'No'. \n -Thank You, \n UofT CandyMan"   
 	}, function(err, message) { 
 		console.log("+1" + num); 
 	});

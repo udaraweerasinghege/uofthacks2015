@@ -24,16 +24,23 @@
 			<h1><img id="candymanLogo" src="video/candyman.png" alt="logo"></h1>
 		</header>
 		<main>
+                    
+                    
+        
+
+                   
+                    
+                    
 			<div class="container" ng-controller="AppCtrl">
 				<form style="display: inline" id="candygramForm">
 					<div>
-						<input required type="text" placeholder="Your name" ng-model="contact.sender"></input>
+            					<input required type="text" placeholder="Your name" ng-model="contact.sender"></input>
 					</div>
 					<div>
 						<input required type="text" placeholder="Your lovely's name" ng-model="contact.receiver"></input>
 					</div>
 					<div>
-						<input pattern="[0-9]{10}" maxlength=10 required title="Phone number must have 10 characters!" type="tel" placeholder="Your lovely's phone name" ng-model="contact.receiverPhoneNumber"></input>
+						<input pattern="[0-9]{10}" maxlength=10 required title="Phone number must have 10 characters!" type="tel" placeholder="Your lovely's phone number" ng-model="contact.receiverPhoneNumber"></input>
 					</div>
 					<div>
 						<input  required type="email" placeholder="Your UofT email" ng-model="contact.email"></input>
@@ -42,7 +49,7 @@
 						<textarea required type="text" placeholder="Type message (up to 200 characters max)" maxlength=200 ng-model="contact.message"></textarea>
 					</div>
 					<!--<input type="submit" value="Submit" ng-click="sendMessage();addContact()"></input>-->
-					<input type="submit" value="Submit" ng-click="addContact()"></input>
+					<input type="submit" value="Submit" ng-click="addContact(); addAlert()"></input>
 					
 					<!-- <input type="submit" value="Submit" ng-click="sendMessage();"></input> -->
 				</form>

@@ -1,3 +1,11 @@
+$(document).ready(function(){
+    
+});
+
+
+
+
+
 function AppCtrl($scope, $http){
     console.log("Hello World");
 /*
@@ -20,15 +28,16 @@ $http.get('/public/contactlist').success(function(response) {
 	};
 	
 	$scope.addContact = function() {
+            alert("Please be patient while we verify your email.")
 		console.log($scope.contact);
 		$http.post('/public/contactlist', $scope.contact).success(function(response){
 	   
 			if (response === "0") {
-				alert("This email has been used before to send candy.");
+				alert("This email has been used before to send candy. Please contact us for changes (6472982364)");
 			}
 			
 			else if  (response === "1") {
-				alert("UofT Email Addresses only");
+				alert("Valid UofT Email Addresses only, if valid please ");
 			}
 			
 			else {
