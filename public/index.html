@@ -3,6 +3,8 @@
 
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"/>
+                <link rel="stylesheet" href="submit.css"/>
+                
 		<!-- JQuery scripts, and scripts that use JQuery. -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 		<script src="controllers/jquery-ui.min.js"></script>
@@ -49,7 +51,7 @@
 						<textarea required type="text" placeholder="Type message (up to 200 characters max)" maxlength=200 ng-model="contact.message"></textarea>
 					</div>
 					<!--<input type="submit" value="Submit" ng-click="sendMessage();addContact()"></input>-->
-					<input type="submit" value="Submit" ng-click="addContact(); addAlert()"></input>
+					<input type="submit" id ="sub" value="Submit" ng-click="addContact(); addAlert()"></input>
 					
 					<!-- <input type="submit" value="Submit" ng-click="sendMessage();"></input> -->
 				</form>
