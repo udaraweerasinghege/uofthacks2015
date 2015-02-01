@@ -10,30 +10,9 @@ body {
 }
 
 
-@font-face {
-    font-family: Cheri;
-    src: url(../fonts/CHERI___.ttf);
-}
-
-@font-face {
-    font-family: CheriOutline;
-    src: url(../fonts/CHERL___.ttf);
-}
-
-@font-face {
-    font-family: Honeybee;
-    src: url(../fonts/Honeybee.ttf);
-}
-
-@font-face {
-    font-family: RhumBanane;
-    src: url(../fonts/RhumBanane.ttf);
-}
 
 header {
-	font-family : CheriOutline;
 	text-align: center;
-	// background-color: pink;
 	display: inline-block;
 	width: 100%;
 }
@@ -51,15 +30,20 @@ main {
 	
 
 	
-	form {	
-		margin-top: 10px;
-		font-family: Cheri;
+	form {
+		position fixed
+		top: 50%;
+		width: 100%;
+		text-align: center;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		
 		@include cssCenterX("absolute", true);
 		@include mediaMinWidth(675) {
-			width: 675px;
+	
 		}
 		@include mediaMaxWidth(674) {
-			width: 100%;
+		
 		}
 			
 		& {
@@ -237,7 +221,7 @@ main {
 			box-sizing: border-box;
 			color: darken(red, 20%);
 			cursor: auto;
-			display: block;
+			display: inline;
 			font-family: Calibri, Lato, Helvetica, Arial, sans-serif;
 			font-stretch: normal;
 			font-style: normal;
