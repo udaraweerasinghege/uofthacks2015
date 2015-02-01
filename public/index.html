@@ -3,13 +3,21 @@
 
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"/>
+		
 		<!-- JQuery scripts, and scripts that use JQuery. -->
-<!-- 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
+		<script src="controllers/jquery-ui.min.js"></script>
+		<script src="controllers/imagesloaded.pkgd.min.js"></script>
 		<script type="text/javascript" src="controllers/video.js"></script>
-		<script type="text/javascript" src="controllers/backgroundVideo.js"></script> -->
+		<script type="text/javascript" src="controllers/bigvideo.js"></script>
 		
+		<script type="text/javascript" src="controllers/backgroundVideo.js"></script>
 		
-		<!-- Angular scripts, and scripts that use Angular. -->
+		<!-- A call made to noConflict, to allow for calls to angular.js -->
+		<script>jQuery.noConflict();</script>
+		
+		<!-- angular.js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
 		<script src="controllers/controller.js"></script>
 	</head>
