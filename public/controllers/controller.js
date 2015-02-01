@@ -12,27 +12,27 @@ $http.get('/public/contactlist').success(function(response) {
 			$scope.data = data;
 		}).error(function(data, status, headers, config) {
 			$scope.status = status;
-			Console.log(data);
-			Console.log(status);
-			Console.log(headers);
-			Console.log(config);
+			console.log(data);
+			console.log(status);
+			console.log(headers);
+			console.log(config);
 		});
 	};
 	
 	$scope.addContact = function() {
 		//console.log($scope.contact);
          
-                $http.post('/public/contactlist', $scope.contact).success(function(response){
+                // $http.post('/public/contactlist', $scope.contact).success(function(response){
                
-                    if (response === "0") {
-                        alert("This email has been used before to send candy.");
-                    }
-                    else if  (response === "1") {
-                        alert("UofT Email Addresses only");
-                    }
-                    else {
-                        console.log(response);
-                    }
-                });
+                    // if (response === "0") {
+                        // alert("This email has been used before to send candy.");
+                    // }
+                    // else if  (response === "1") {
+                        // alert("UofT Email Addresses only");
+                    // }
+                    // else {
+                        // console.log(response);
+                    // }
+                // });
         };
 }
