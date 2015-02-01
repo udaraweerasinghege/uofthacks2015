@@ -22,17 +22,23 @@ $http.get('/public/contactlist').success(function(response) {
 	$scope.addContact = function() {
 		console.log($scope.contact);
          
-                $http.post('/public/contactlist', $scope.contact).success(function(response){
-               
-                    if (response === "0") {
-                        alert("This email has been used before to send candy.");
-                    }
-                    else if  (response === "1") {
-                        alert("UofT Email Addresses only");
-                    }
-                    else {
-                        console.log(response);
-                    }
-                });
-        };
+		$http.post('/public/contactlist', $scope.contact).success(function(response){
+	   
+			if (response === "0") {
+				alert("This email has been used before to send candy.");
+			}
+			
+			else if  (response === "1") {
+				alert("UofT Email Addresses only");
+			}
+			
+			else {
+				console.log(response);
+				jQuery(document).ready(function() {
+					jQuery("input[type=text], textarea, input[type=tel], input[type=email]").val("");
+				});
+			}
+			
+		});
+	};
 }
