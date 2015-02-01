@@ -28,10 +28,11 @@ $http.get('/public/contactlist').success(function(response) {
                         alert("This email has been used before to send candy.");
                     }
                     else if  (response === "1") {
-                        alert("UofT Email Addresses only");
+                        alert("Please enter a valid UofT Email Address");
                     }
                     else {
                         console.log(response);
+                        alert("Success! Candygram will be delivered soon!");
                     }
                 });
         };
