@@ -25,6 +25,11 @@ body {
     src: url(../fonts/Honeybee.ttf);
 }
 
+@font-face {
+    font-family: RhumBanane;
+    src: url(../fonts/RhumBanane.ttf);
+}
+
 header {
 	font-family : CheriOutline;
 	text-align: center;
@@ -49,6 +54,13 @@ main {
 		& {
 			> div, > textarea {
 				@include marginY(10px);
+				
+			}
+			
+			> div {
+				display: inline-block;
+				width: 100%;
+				position: relative;
 			}
 		}
 		
@@ -58,8 +70,21 @@ main {
 			}
 		}
 		
+		label {
+			float: left;
+			font-family: RhumBanane, Segoe UI, Calibri, Helvetica, Arial;
+			font-size: 20px;
+			font-weight: 100;
+			@include cssCenterY(absolute);
+		}
+		
+		textarea, input[type=text], input[type=email],
+		input[type=tel]
+		{
+			float: right;
+		}
+		
 		textarea {
-			max-width: 184px;
 			width: 184px;
 			height: 135px;
 			max-height: 135px;
@@ -68,8 +93,6 @@ main {
 		}
 		
 		input {
-			max-width: 184px;
-			width: 184px;		
 			
 			&[type=submit], 
 			&[type=email], 
@@ -202,14 +225,10 @@ main {
 			font-weight: normal;
 			height: 42px;
 			letter-spacing: normal;
-			margin-bottom: 0px;
-			margin-left: 0px;
-			margin-right: 0px;
-			margin-top: 0px;
-			padding-bottom: 8px;
+			margin: 0;
+			@include paddingY(5px);
 			padding-left: 12px;
 			padding-right: 12px;
-			padding-top: 8px;
 			text-align: start;
 			text-indent: 0px;
 			text-shadow: none;
@@ -218,13 +237,14 @@ main {
 			transition-duration: 0.2s, 0.2s, 0.2s;
 			transition-property: border, color, background-color;
 			transition-timing-function: linear, linear, linear;
-			width: 212.5px;
+			width: 250px;
 			word-spacing: 0px;
 			writing-mode: lr-tb;
 			&:-webkit-autofill {
 				color: darken(red, 20%) !important;
 				background-color: red !important;
 				-webkit-box-shadow: 0 0 0 1000px pink inset;
+				font-family: 500;
 			}
 			&:focus {
 				outline: 0;
