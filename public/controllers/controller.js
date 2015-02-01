@@ -21,19 +21,25 @@ $http.get('/public/contactlist').success(function(response) {
 	
 	$scope.addContact = function() {
 		console.log($scope.contact);
-         
-                $http.post('/public/contactlist', $scope.contact).success(function(response){
-               
-                    if (response === "0") {
-                        alert("This email has been used before to send candy.");
-                    }
-                    else if  (response === "1") {
-                        alert("Please enter a valid UofT Email Address");
-                    }
-                    else {
-                        console.log(response);
-                        alert("Success! Candygram will be delivered soon!");
-                    }
-                });
-        };
+		$http.post('/public/contactlist', $scope.contact).success(function(response){
+	   
+			if (response === "0") {
+				alert("This email has been used before to send candy.");
+			}
+			
+			else if  (response === "1") {
+				alert("UofT Email Addresses only");
+			}
+			
+			else {
+				console.log(response);
+				alert("Success! Candygram will be delivered soon!");
+				jQuery(document).ready(function() {
+					jQuery("input[type=text], textarea, input[type=tel], input[type=email]").val("");
+				});
+			}
+			
+		});
+	};
+
 }

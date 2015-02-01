@@ -7,14 +7,19 @@ body {
 	// background-color: $red;
 	margin: 0;
 	@include linear-gradient(90deg, $pinkShade1 10%, $pinkShade2 90%);
+	overflow-x: hidden;
 }
-
-
 
 header {
 	text-align: center;
 	display: inline-block;
 	width: 100%;
+	h1 {
+		@include marginY(0);
+		& > #candymanLogo {
+			@include adaptImage(425);
+		}
+	}
 }
 
 #big-video-wrap, #big-video-wrap * {
@@ -26,12 +31,12 @@ header {
 }
 
 main {
-	margin: 10px;
+	// margin: 10px;
 	
 
 	
 	form {
-		position fixed
+		position: fixed;
 		top: 50%;
 		width: 100%;
 		text-align: center;
@@ -56,8 +61,9 @@ main {
 			}
 			
 			> div:not(#candygramMessage) {
-				min-height: 75px;
+				// min-height: 75px;
 				position: relative;
+				height: 42px;
 			}
 			
 		}
@@ -83,9 +89,11 @@ main {
 		{
 			float: right;
 			text-align: right;
-			@include cssCenterY(absolute);
+			// @include cssCenterY(absolute);
 			width: 250px;
 			right: 0;
+			
+			@include cssCenterX(absolute);
 		}
 		
 		textarea {
@@ -110,6 +118,7 @@ main {
 			&[type=tel] {
 				font-size: 18px;
 				line-height: 22.0049991607666px;
+				@include cssCenterX(absolute);
 			}
 				
 			&[type=submit] {
