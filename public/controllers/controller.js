@@ -28,7 +28,7 @@ $http.get('/public/contactlist').success(function(response) {
 	};
 	
 	$scope.addContact = function() {
-            alert("Please be patient while we verify your email.")
+            alert("Please be patient while we verify your email.\nPress Ok");
 		console.log($scope.contact);
 		$http.post('/public/contactlist', $scope.contact).success(function(response){
 	   
