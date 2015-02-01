@@ -3,22 +3,26 @@
 
 	<head>
 		<link rel="stylesheet" href="styles/css/index.css"/>
+		
 		<!-- JQuery scripts, and scripts that use JQuery. -->
 		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+		
 		<script src="controllers/jquery-ui.min.js"></script>
 		<script src="controllers/imagesloaded.pkgd.min.js"></script>
 		<script type="text/javascript" src="controllers/video.js"></script>
 		<script type="text/javascript" src="controllers/bigvideo.js"></script>
-		<script type="text/javascript" src="controllers/backgroundVideo.js"></script>
+		
+		
+		<!-- A call made to noConflict, to allow for calls to angular.js -->
 		<script>jQuery.noConflict();</script>
 		
-		<!-- Angular scripts, and scripts that use Angular. -->
+		<!-- angular.js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
 		<script src="controllers/controller.js"></script>
 	</head>
 	<body>
 		<header>
-			<h1><img  src="video/candyman.png" alt="logo"></h1>
+			<h1><img  src="candyman.jpg" alt="logo"></h1>
 		</header>
 		<main>
 			<div class="container" ng-controller="AppCtrl">

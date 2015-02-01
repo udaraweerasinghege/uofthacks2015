@@ -38,8 +38,15 @@ header {
 	width: 100%;
 }
 
+#big-video-wrap, #big-video-wrap * {
+	z-index : -1;
+}
+
 main {
 	margin: 10px;
+	
+
+	
 	form {	
 		margin-top: 10px;
 		font-family: Cheri;
