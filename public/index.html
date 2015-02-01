@@ -18,23 +18,23 @@
 			<div class="container" ng-controller="AppCtrl">
 				<form id="candygramForm">
 					<div>
-						<div>Type your name: </div>
+						<label>Type your name: </label>
 						<input required type="text" ng-model="contact.sender"></input>
 					</div>
 					<div>
-						<div>Type your lovely's name: </div>
+						<label>Type your lovely's name: </label>
 						<input required type="text" ng-model="contact.receiver"></input>
 					</div>
 					<div>
-						<div>Type your lovely's phone number: </div>
+						<label>Type your lovely's phone number: </label>
 						<input pattern="[0-9]{10}" maxlength=10 required title="Phone number must have 10 characters!" type="tel" ng-model="contact.receiverPhoneNumber"></input>
 					</div>
 					<div>
-						<div>Type your University of Toronto email: </div>
+						<label>Type your University of Toronto email: </label>
 						<input  required type="email" ng-model="contact.email"></input>
 					</div>
 					<div id="candygramMessage">
-						<div>Type message (up to 200 characters inclusive): </div>
+						<label>Type message (up to 200 characters max): </label>
 						<textarea required type="text" maxlength=200 ng-model="contact.message"></textarea>
 					</div>
 					<!--<input type="submit" value="Submit" ng-click="sendMessage();addContact()"></input>-->

@@ -20,6 +20,11 @@ body {
     src: url(../fonts/CHERL___.ttf);
 }
 
+@font-face {
+    font-family: Honeybee;
+    src: url(../fonts/Honeybee.ttf);
+}
+
 header {
 	font-family : CheriOutline;
 	text-align: center;
@@ -54,39 +59,101 @@ main {
 		}
 		
 		textarea {
-
 			max-width: 184px;
 			width: 184px;
 			height: 135px;
 			max-height: 135px;
 			min-height :135px;
+			font-size: 16px;
 		}
 		
 		input {
 			max-width: 184px;
 			width: 184px;		
-			[type=submit], 
-			[type=email], 
-			[type=text],
-			[type=tel] {
+			
+			&[type=submit], 
+			&[type=email], 
+			&[type=text],
+			&[type=tel] {
 				font-family: Cheri;
 			}
-		}
-		
-		
-		
-		textarea {
-			font-size: 16px;
-		}
-		
-		input[type=email], 
-		input[type=text],
-		input[type=tel] {
-			font-size: 18px;
 			
-			line-height: 22.0049991607666px;
+			&[type=email], 
+			&[type=text],
+			&[type=tel] {
+				font-size: 18px;
+				line-height: 22.0049991607666px;
+			}
+				
+			&[type=submit] {
+			
+				&:hover {
+					background-color: darken(#F70D0D, 10%);
+				}
+			
+				-webkit-background-clip: border-box;
+				-webkit-background-origin: padding-box;
+				-webkit-background-size: auto;
+				-webkit-font-smoothing: subpixel-antialiased;
+				-webkit-transition-delay: 0s, 0s, 0s;
+				-webkit-transition-duration: 0.25s, 0.25s, 0.25s;
+				-webkit-transition-property: border, color, background-color;
+				-webkit-transition-timing-function: linear, linear, linear;
+				-webkit-user-select: none;
+				background-attachment: scroll;
+				background-clip: border-box;
+				background-color: #F70D0D;
+				background-image: none;
+				background-origin: padding-box;
+				background-size: auto;
+				border-bottom-color: rgb(255, 255, 255);
+				border-bottom-left-radius: 6px;
+				border-bottom-right-radius: 6px;
+				border-bottom-style: none;
+				border-bottom-width: 0px;
+				border-image-outset: 0px;
+				border-image-repeat: stretch;
+				border-image-slice: 100%;
+				border-image-source: none;
+				border-image-width: 1;
+				border-left-color: rgb(255, 255, 255);
+				border-left-style: none;
+				border-left-width: 0px;
+				border-right-color: rgb(255, 255, 255);
+				border-right-style: none;
+				border-right-width: 0px;
+				border-top-color: rgb(255, 255, 255);
+				border-top-left-radius: 6px;
+				border-top-right-radius: 6px;
+				border-top-style: none;
+				border-top-width: 0px;
+				box-sizing: border-box;
+				color: rgb(255, 255, 255);
+				cursor: pointer;
+				display: block;
+				font-family: Segoe UI, Calibri, Lato, Helvetica, Arial, sans-serif;
+				font-size: 17px;
+				font-weight: normal;
+				height: 45px;
+				line-height: 25.0070018768311px;
+				margin-bottom: 0px;
+				padding-bottom: 10px;
+				padding-left: 19px;
+				padding-right: 19px;
+				padding-top: 10px;
+				text-align: center;
+				text-decoration: none;
+				transition-delay: 0s, 0s, 0s;
+				transition-duration: 0.25s, 0.25s, 0.25s;
+				transition-property: border, color, background-color;
+				transition-timing-function: linear, linear, linear;
+				vertical-align: middle;
+				white-space: normal;
+				width: 212.5px;
+			}
+				
 		}
-		 
+		
 		textarea,
 		input[type=email], 
 		input[type=text],
@@ -163,11 +230,8 @@ main {
 				outline: 0;
 				border-width: 3.5px;
 			}
-			
-			
 		}
 		
-	
 	}
 }
 
