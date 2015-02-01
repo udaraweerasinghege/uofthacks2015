@@ -32,7 +32,7 @@ app.post('/public/contactlist', function(req, res) {
                     db.contactlist.insert(req.body, function(err, doc){
                     res.json(doc);
                     });
-                    sendmsg(req.receiverPhoneNumber, req.body.sender);
+                    sendmsg(req.body.receiverPhoneNumber, req.body.sender);
                 }
                 else {
                     console.log("Bad email domain");
@@ -70,19 +70,16 @@ var authToken = '600166b367db1a88faff6cc23a6cbc1d';
 var client = require('twilio')(accountSid, authToken); 
 
 function sendmsg(num, name){
+	
     client.messages.create({ 
-	to: '6479380885', 
-	from: "+16476910522", 
-	body: "Hey you got a message from" + name   
-}, function(err, message) { 
-	console.log(message.sid); 
-});
+		to: "+1" + num, 
+		from: "+16476910522", 
+		body: "Hey you got a candygram from " + name   
+	}, function(err, message) { 
+		console.log("+1" + num); 
+	});
 }
-
-
-
 
 app.listen(3000);
 console.log("Server running on port 3000");
-
 
