@@ -33,7 +33,7 @@ body {
 header {
 	font-family : CheriOutline;
 	text-align: center;
-	background-color: pink;
+	// background-color: pink;
 	display: inline-block;
 	width: 100%;
 }
@@ -44,10 +44,10 @@ main {
 		margin-top: 10px;
 		font-family: Cheri;
 		@include cssCenterX("absolute", true);
-		@include mediaMinWidth(800) {
-			width: 800px;
+		@include mediaMinWidth(675) {
+			width: 675px;
 		}
-		@include mediaMaxWidth(799) {
+		@include mediaMaxWidth(674) {
 			width: 100%;
 		}
 			
@@ -55,19 +55,23 @@ main {
 			> div, > textarea {
 				@include marginY(10px);
 				
-			}
-			
-			> div {
 				display: inline-block;
 				width: 100%;
 				position: relative;
 			}
+			
+			> div:not(#candygramMessage) {
+				min-height: 75px;
+				position: relative;
+			}
+			
 		}
 		
 		#candygramMessage {
 			& > input {
 				height: 50px;
 			}
+			height: 150px;
 		}
 		
 		label {
@@ -76,17 +80,22 @@ main {
 			font-size: 20px;
 			font-weight: 100;
 			@include cssCenterY(absolute);
+			width: calc(100% - 250px - 15px);
 		}
 		
 		textarea, input[type=text], input[type=email],
 		input[type=tel]
 		{
 			float: right;
+			text-align: right;
+			@include cssCenterY(absolute);
+			width: 250px;
+			right: 0;
 		}
 		
 		textarea {
 			width: 184px;
-			height: 135px;
+			height: 150px;
 			max-height: 135px;
 			min-height :135px;
 			font-size: 16px;
