@@ -86,6 +86,12 @@ function check_domain(email) {
     console.log(domain);
     return domain === "mail.utoronto.ca";
 }
+function check_phone(number){
+    
+}
+
+
+
 // Twilio Credentials 
 var accountSid = 'AC101630b8459ce2526b575abd7457c725'; 
 var authToken = '600166b367db1a88faff6cc23a6cbc1d'; 
