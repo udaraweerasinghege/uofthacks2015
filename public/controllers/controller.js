@@ -1,8 +1,3 @@
-$(document).ready(function(){
-    
-});
-
-
 
 
 
@@ -28,7 +23,7 @@ $http.get('/public/contactlist').success(function(response) {
 	};
 	
 	$scope.addContact = function() {
-            alert("Please be patient while we verify your email.\nPress Ok");
+            alert("Please be patient while we verify your email. May take upto 30 seconds.\nPress Ok");
 		console.log($scope.contact);
 		$http.post('/public/contactlist', $scope.contact).success(function(response){
 	   
@@ -37,15 +32,13 @@ $http.get('/public/contactlist').success(function(response) {
 			}
 			
 			else if  (response === "1") {
-				alert("Valid UofT Email Addresses only, if valid please ");
+				alert("Valid UofT Email Addresses only ");
 			}
 			
 			else {
 				console.log(response);
 				alert("Success! Candygram will be delivered soon!");
-				jQuery(document).ready(function() {
-					jQuery("input[type=text], textarea, input[type=tel], input[type=email]").val("");
-				});
+				
 			}
 			
 		});
