@@ -111,8 +111,7 @@ function check_phone(number){
 
 
 // Twilio Credentials 
-var accountSid = 'ACb5b8b7aaf585513d108ebd6b8fa1ae0d'; 
-var authToken = '37f96779f221e582a513f4c1438dc01c'; 
+
  
 //require the Twilio module and create a REST client 
 var client = require('twilio')(accountSid, authToken); 
