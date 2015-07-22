@@ -1,4 +1,2 @@
 # uofthacks2015
-UofTHacks
-starwhatevs
-Sundaswaren
+Best Read Me
